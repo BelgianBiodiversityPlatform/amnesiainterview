@@ -1,0 +1,19 @@
+<div class="col-md-4 col-sm-6">
+    <div class="box">
+        <div class="frame"><a href="#"><img src="${'{}/{}/download'.format(request.script_name, content.picture_id)}" alt="${content.last_name} ${content.first_name}" style="width:340px;height:370px" /></a></div>
+        <div class="text-box">
+            <h4><a href="${request.resource_url(content)}">${content.first_name} ${content.last_name}</a></h4>
+            <span tal:condition="content.position">${content.position}</span>
+            <p>${content.description}</p>
+            <div class="team-social">
+                <ul>
+                    <li tal:condition="content.twitter"><a href="${content.twitter}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                    <li tal:condition="content.linkedin"><a href="${content.linkedin}"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li tal:condition="content.facebook"><a href="${content.facebook}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                    <li tal:condition="content.instagram"><a href="${content.instagram}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                    <li tal:condition="content.researchgate"><a href="${content.researchgate}"><i class="fab fa-researchgate" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

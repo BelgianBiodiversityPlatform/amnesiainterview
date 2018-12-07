@@ -1,0 +1,74 @@
+<metal:block use-macro="layout.macros['layout']">
+<metal:block fill-slot="title_more">: ${content.title}</metal:block>
+<metal:block define-macro="body">
+<metal:block fill-slot="content">
+    <div id="main">
+        <section class="interview-page">
+            <div class="container">
+                <metal:block define-slot="top" />
+                <div class="row">
+                    <hr />
+                    <h2 class="text-center">${content.first_name} ${content.last_name}</h2>
+                    <hr />
+                </div>
+                <div class="row" metal:define-slot="body">
+                    <div class="col-md-9 col-sm-8" metal:define-slot="text">
+                    <h4><i class="far fa-address-card"></i> ${content.position}</h4>
+                    <h4><i class="fas fa-globe"></i> ${content.affiliation}</h4>
+                        ${structure: content.body}
+                    </div>
+                    <div class="col-md-3 col-sm-4" metal:define-slot="aside"> 
+                    <!--SIDEBAR START-->
+                        <aside>
+                            <div class="sidebar">
+                                <metal:block define-slot="aside-top" />
+
+                                <!-- PICTURE -->
+
+                                <div class="sidebar-box">
+                                    <img src="${'{}/{}/download'.format(request.script_name, content.picture_id)}" class="interview img-thumbnail" />
+                                </div>
+
+                                <!-- SOCIAL BUTTONS -->
+
+                                <div class="sidebar-box">
+                                    <div class="team-social">
+                                        <ul>
+                                            <li tal:condition="content.twitter"><a href="${content.twitter}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                            <li tal:condition="content.linkedin"><a href="${content.linkedin}"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                            <li tal:condition="content.facebook"><a href="${content.facebook}"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                            <li tal:condition="content.instagram"><a href="${content.instagram}"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                            <li tal:condition="content.researchgate"><a href="${content.researchgate}"><i class="fab fa-researchgate" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="sidebar-box" tal:condition="content.twitter">
+                                    ${structure: widgets.twitter(request, content.twitter)}
+                                </div>
+
+                                <div class="sidebar-box" tal:condition="content.tags">
+                                    <h3><i class="fa fa-tags" aria-hidden="true"></i> Tags</h3>
+                                    <div class="tags">
+                                        <a href="#" tal:repeat="tag content.tags">${tag.name}</a>
+                                    </div>
+                                </div>
+                                <metal:block define-slot="aside-bottom" />
+                            </div>
+                        </aside>
+                    <!-- SIDEBAR END -->
+                    </div>
+                </div>
+                <metal:block define-slot="bottom" />
+            </div>
+        </section>
+    </div>
+</metal:block>
+</metal:block>
+<metal:block fill-slot="javascript_srcs">
+    <script src="${request.static_url('amnesiabbpf:static/dist/interview_show.bundle.js')}"></script>
+</metal:block>
+<metal:block fill-slot="head-bottom">
+    <link href="${request.static_url('amnesiabbpf:static/dist/styles/interview_show.css')}" rel="stylesheet">
+</metal:block>
+</metal:block>

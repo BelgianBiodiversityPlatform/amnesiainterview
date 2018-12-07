@@ -1,0 +1,122 @@
+<metal:block use-macro="load: amnesiabbpf:templates/content/_form.pt">
+    <metal:block fill-slot="section-default">
+
+    <div class="row">
+
+    <!-- NAME -->
+
+         <div class="form-group col-md-6">
+            <label for="interview_last_name">Last Name</label>
+            <span class="help-block">Last name of the interviewed person.</span>
+            <input type="text" id="interview_last_name" name="last_name" class="form-control" placeholder="name" />
+        </div>
+
+        <!-- FIRSTNAME -->
+
+        <div class="form-group col-md-6">
+            <label for="interview_first_name">First Name</label>
+            <span class="help-block">First Name of the person.</span>
+            <input type="text" id="interview_first_name" name="first_name" class="form-control" placeholder="first name" />
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="interview_picture">Profile picture</label>
+        <span class="help-block">A picture representing the interviewed person.</span>
+        <input class="btn btn-default" type="button" value="Select profile picture" id="select_profile_picture">
+        <input class="btn btn-danger" type="button" value="Remove profile picture" id="remove_profile_picture" style="display:none">
+        <input type="hidden" name="picture_id" id="picture_id" />
+        <div>
+            <img id="selected_profile_picture" src="" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- POSITION -->
+
+        <div class="form-group col-md-6">
+            <label for="interview_position">Position</label>
+            <span class="help-block">Position of the interviewed person.</span>
+            <input type="text" id="interview_position" name="position" class="form-control" placeholder="position" />
+        </div>
+
+        <!-- AFFILIATION -->
+
+        <div class="form-group col-md-6">
+            <label for="interview_affiliation">Affiliation</label>
+            <span class="help-block">Affiliation of the interviewed person.</span>
+            <input type="text" id="interview_affiliation" name="affiliation" class="form-control" placeholder="affiliation" />
+        </div>
+
+    </div>
+
+    <!-- INTERVIEW -->
+
+    <div class="form-group">
+        <label for="interview_body">Body</label>
+        <span class="help-block">Title for the item, it will be shown throughout the site.</span>
+        <textarea name="body" id="interview_body" class="mceEditor"></textarea>
+    </div>
+
+    <div class="row">
+
+         <div class="form-group col-md-6">
+            <label for="interview_twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+                Twitter
+            </label>
+            <span class="help-block">Twitter account.</span>
+            <input type="url" id="interview_twitter" name="twitter" class="form-control" placeholder="twitter" />
+        </div>
+
+         <div class="form-group col-md-6">
+            <label for="interview_linkedin">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                Linkedin
+            </label>
+            <span class="help-block">Linkedin profile.</span>
+            <input type="url" id="interview_linkedin" name="linkedin" class="form-control" placeholder="name" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+         <div class="form-group col-md-6">
+            <label for="interview_facebook">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
+                Facebook
+            </label>
+            <span class="help-block">Facebook page.</span>
+            <input type="url" id="interview_facebook" name="facebook" class="form-control" placeholder="name" />
+        </div>
+
+
+         <div class="form-group col-md-6">
+            <label for="interview_instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                Instagram
+            </label>
+            <span class="help-block">Instagram account.</span>
+            <input type="url" id="interview_instagram" name="instagram" class="form-control" placeholder="name" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+         <div class="form-group col-md-6">
+            <label for="interview_researchgate">
+                <i class="fab fa-researchgate" aria-hidden="true"></i>
+                Researchgate
+            </label>
+            <span class="help-block">Researchgate profile.</span>
+            <input type="url" id="interview_researchgate" name="researchgate" class="form-control" placeholder="name" />
+        </div>
+
+    </div>
+
+    </metal:block>
+</metal:block>
